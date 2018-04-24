@@ -5,6 +5,8 @@ $this->load->view($this->config->item('theme') . 'header');
 
 ?>
 
+<h2><?=$title?></h2>
+
 <? echo validation_errors(); ?>
 
 <? echo form_open('news/create'); ?>
