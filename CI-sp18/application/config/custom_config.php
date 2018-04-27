@@ -4,6 +4,6 @@
 $config['style'] = 'journal.css';
 $config['banner'] = 'Default Banner';
 $config['title'] = 'Default Title';
-$config['copyright'] = 'Default Copyright';
+$config['copyright'] = 'Copyright Vanver Brown';
 $config['masthead'] = 'Default MastHead';
 $config['theme'] = 'themes/bootswatch/';

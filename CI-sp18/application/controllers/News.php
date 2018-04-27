@@ -7,14 +7,14 @@ class News extends CI_Controller {
                 parent::__construct();
                 $this->load->model('news_model');
                 $this->load->helper('url_helper');
-                $this->config->set_item('banner','News Banner');
+                $this->config->set_item('banner','News');
         }
 
         public function index()
         {
                 $data['news'] = $this->news_model->get_news();
                 //$data['title'] = 'News archive';
-                $this->config->set_item('title','News Title');
+                $this->config->set_item('title','News');
                 $this->load->view('news/index', $data);
            
         }//end of index
@@ -28,7 +28,8 @@ class News extends CI_Controller {
                         show_404();
                 }
 
-                $data['title'] = $data['news_item']['title'];
+                $this->config->set_item('title', $slug . ' news');
+                $this->config->set_item('banner', $slug . ' NEWS');
                 $this->load->view('news/view', $data);
                 
         }//end of view
@@ -37,6 +38,7 @@ class News extends CI_Controller {
         {
                 $this->load->helper('form');
                 $this->load->library('form_validation');
+                $this->config->set_item('title', 'Create News');
 
                 $data['title'] = 'Create a news item';
 
